@@ -1,0 +1,30 @@
+<include>
+  <X-PRE-PROCESS cmd="set" data="default_password=1234"/>
+
+  <X-PRE-PROCESS cmd="set" data="domain=localhost"/>
+  <X-PRE-PROCESS cmd="set" data="domain_name=$${domain}"/>
+
+  <X-PRE-PROCESS cmd="set" data="freeswitch_base_dir=/usr/local/freeswitch"/>
+
+  <!-- Codec preferences -->
+  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=PCMA"/>
+  <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=PCMA"/>
+
+  <!-- unroll-loops - Used to turn on sip loopback unrolling. --> 
+  <X-PRE-PROCESS cmd="set" data="unroll_loops=true"/>
+
+  <!-- various debug and defaults -->
+  <X-PRE-PROCESS cmd="set" data="console_loglevel=info"/>
+
+  <!-- SIP and TLS settings. http://wiki.freeswitch.org/wiki/Tls -->
+  <X-PRE-PROCESS cmd="set" data="sip_tls_version=tlsv1"/>
+
+  <!-- External SIP Profile -->
+  <X-PRE-PROCESS cmd="set" data="external_auth_calls=false"/>
+  <X-PRE-PROCESS cmd="set" data="external_sip_port=5060"/>
+  <X-PRE-PROCESS cmd="set" data="external_tls_port=5061"/>
+  <X-PRE-PROCESS cmd="set" data="external_ssl_enable=false"/>
+  <X-PRE-PROCESS cmd="set" data="external_ssl_dir=$${base_dir}/conf/ssl"/>
+
+  <X-PRE-PROCESS cmd="set" data="event_socket_ip=127.0.0.1"/>
+</include>

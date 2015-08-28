@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<document type="freeswitch/xml">
+  <X-PRE-PROCESS cmd="include" data="vars.xml"/>
+
+  <X-PRE-PROCESS cmd="set" data="local_sip_ip=192.168.90.105"/>
+  <X-PRE-PROCESS cmd="set" data="local_rtp_ip=192.168.90.105"/>
+
+  <X-PRE-PROCESS cmd="set" data="external_sip_ip=192.168.90.105"/>
+  <X-PRE-PROCESS cmd="set" data="external_rtp_ip=192.168.90.105"/>
+
+  <section name="configuration" description="Various Configuration">
+    <X-PRE-PROCESS cmd="include" data="autoload_configs/*.xml"/>
+  </section>
+
+  <section name="dialplan" description="Regex/XML Dialplan">
+    <X-PRE-PROCESS cmd="include" data="dialplan/*.xml"/>
+  </section>
+
+  <section name="directory" description="User Directory">
+    <X-PRE-PROCESS cmd="include" data="directory/*.xml"/>
+  </section>
+
+  <section name="languages" description="Language Management">
+    <X-PRE-PROCESS cmd="include" data="lang/*.xml"/>
+  </section>
+</document>

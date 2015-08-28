@@ -1,0 +1,4 @@
+<configuration name="v8.conf" description="V8 JavaScript">
+  <modules>
+  </modules>
+</configuration>

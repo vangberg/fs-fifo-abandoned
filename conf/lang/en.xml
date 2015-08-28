@@ -1,0 +1,17 @@
+<include>
+  <language name="en" sound-prefix="$${sounds_dir}/en">
+    <phrases>
+      <macros>
+        <macro name="position">
+          <input pattern=".*">
+            <match>
+              <!--<action function="play-file" data="you_are_number" />-->
+              <action function="execute" data="javascript(position.js)" />
+              <!--<action function="play-file" data="in_the_queue" />-->
+            </match>
+          </input>
+        </macro>
+      </macros>
+    </phrases>
+  </language>
+</include>

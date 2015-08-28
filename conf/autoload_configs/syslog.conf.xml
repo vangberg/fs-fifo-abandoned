@@ -1,0 +1,7 @@
+<configuration name="syslog.conf" description="Syslog Logger">
+  <settings>
+    <param name="facility" value="user"/>
+    <param name="ident" value="freeswitch"/>
+    <param name="loglevel" value="warning"/>
+  </settings>
+</configuration>

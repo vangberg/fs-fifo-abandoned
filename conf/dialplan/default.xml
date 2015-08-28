@@ -1,0 +1,31 @@
+<include>
+  <context name="default">
+    <extension name="unloop">
+      <condition field="${unroll_loops}" expression="^true$"/>
+      <condition field="${sip_looped_call}" expression="^true$">
+	    <action application="deflect" data="${destination_number}"/>
+      </condition>
+    </extension>
+
+    <extension name="outside_call" continue="true">
+      <condition>
+        <action application="set" data="outside_call=true"/>
+        <action application="set" data="RFC2822_DATE=${strftime(%a, %d %b %Y %T %z)}"/>
+      </condition>
+    </extension>
+
+    <extension name="queue_in">
+      <condition field="destination_number" expression="^2000$">
+        <action application="set" data="fifo_chime_list=phrase:position"/>
+        <action application="set" data="fifo_chime_freq=15"/>
+        <action application="fifo" data="queue1 in"/>
+      </condition>
+    </extension>
+
+    <extension name="queue_out">
+      <condition field="destination_number" expression="^3000$">
+        <action application="fifo" data="queue1 out"/>
+      </condition>
+    </extension>
+  </context>
+</include>
